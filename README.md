@@ -1,24 +1,12 @@
 #Nodeathon
 
-###Overview
-A basic Node.js app setup to save time at a hackathon. 
+A basic Node.js express app with [Sass](https://github.com/andrew/node-sass) and [EJS](https://github.com/visionmedia/ejs) templates and setup for deployment to Heroku.
 
 ###Installation
 Assuming you already have Node installed:
 
-1. Clone the repo to your workspace
-2. Rename the `nodeathon` directory: `mv nodeathon my_project`
-3. Update the remote repo url: `git remote set-url origin git@github.com:user/my_project.git`
-4. Push to the master branch: `git push origin master`
-
-###Included Libraries
-Node
-
-- Stylus
-- Jade
-- Request
-
-JS
-
-- Underscore
-- jQuery
+    $ git clone git@github.com:caseypt/nodeathon.git project_name
+    $ cd project_name 
+    $ rm -rf .git
+    $ git init
+    $ npm install
