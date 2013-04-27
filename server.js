@@ -1,5 +1,4 @@
 var express = require('express');
-var sass = require('node-sass');
 var ejs = require('ejs');
 ejs.open = '{{';
 ejs.close = '}}';
@@ -12,12 +11,16 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // https://github.com/andrew/node-sass
-app.use(sass.middleware({
-  src: __dirname + '/sass/',
-  dest: __dirname + '/public/',
-  debug: true,
-  force: true
-}));
+if(app.settings.env !== 'production') {
+  var sass = require('node-sass');
+
+  app.use(sass.middleware({
+    src: __dirname + '/sass/',
+    dest: __dirname + '/public/',
+    debug: true,
+    force: true
+  }));
+}
 
 app.use(express.static(__dirname + '/public'));
 
